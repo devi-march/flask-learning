@@ -10,7 +10,9 @@
     <h1>Employee List</h1>
     <ul>
         {% for employee in employees %}
-            <li>{{ employee.id }} - {{ employee.name }}</li>
+            <li>{{ employee.id }} - {{ employee.name }}
+                <a href="{{ url_for('edit_employee', employee_id=employee.id) }}">Edit</a>
+            </li>
         {% endfor %}
     </ul>
     <a href="{{ url_for('add_employee') }}">Add Employee</a>
